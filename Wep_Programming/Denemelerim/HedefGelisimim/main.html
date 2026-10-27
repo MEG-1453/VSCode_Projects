@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MEG | Full Cycle Architect</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&display=swap" rel="stylesheet">
+    <link rel="icon" href="/resimler/Ekran görüntüsü 2026-01-01 182711.png" type="image/png">
+
+    <style>
+        /* --- AYARLAR --- */
+        :root {
+            --bg-color: #050505;
+            --neon-cyan: #00f3ff;
+            --neon-purple: #cc9c75;
+            --neon-green: #0aff60;
+            --neon-cyan1: #4aac8e;
+            --neon-orange: #ff9100;
+            --social-blue: #3bf0f6; 
+            --ai-red: #ca53e2; 
+            --text-bright: #ffffff;
+            --tur-sresi: 25s;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: #fff;
+            font-family: 'Space Grotesk', sans-serif;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        /* --- BACKGROUND --- */
+        .plasma-bg {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: radial-gradient(circle at 50% 50%, #195049 0%, #111111 100%);
+            z-index: -2;
+            
+        }
+        .orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(2px);
+            opacity: 0.2;
+            animation: floatOrb 10s infinite ease-in-out alternate;
+            z-index: -1;
+        }
+        .orb-1 {
+            width: 400px; 
+            height: 400px; 
+            background: var(--neon-purple); 
+            top: -130px; 
+            left: -150px; 
+            animation-duration: 10s; 
+        }
+        .orb-2 { 
+            width: 400px; 
+            height: 400px; 
+            background: var(--neon-cyan); 
+            bottom: 10%; 
+            right: -50px; 
+            animation-duration: 16s; 
+            opacity: 0.1;
+        }
+        .orb-3 { 
+            width: 400px; 
+            height: 400px; 
+            background: var(--neon-green); 
+            top: 40%; 
+            left: 40%; 
+            animation-duration: 14s; 
+            opacity: 0.2; 
+            animation-delay: -14s;
+        }
+
+        .orb-4 { 
+            width: 400px; 
+            height: 400px; 
+            background: var(--neon-green); 
+            bottom: 10%; 
+            left: -100px; 
+            animation-duration: 14s; 
+            animation-name: floatUp;
+            opacity: 0.2; 
+        }
+
+        .orb-5 { 
+            width: 400px; 
+            height: 400px; 
+            background: var(--neon-cyan); 
+            top: 10%; 
+            right: -200px; 
+            animation-duration: 10s; 
+            animation-name: floatUp;
+            opacity: 0.1; 
+        }
+
+
+        /* Ellipse şeklinde dönen 8 top 
+        .orb-6 { 
+            width: 200px; 
+            height: 200px; 
+            background: var(--neon-cyan1); 
+            top: 10%; 
+            right: -200px; 
+            animation-duration: 10s; 
+            animation: followPath var(--tur-sresi) linear infinite;
+            offset-path: ellipse(48vw 48vh at center);
+            opacity: 0.35;
+            animation-delay: calc(var(--tur-sresi) * 0 / 8); 
+        }
+
+        .orb-7 { 
+            width: 200px; 
+            height: 200px; 
+            background: var(--neon-cyan1); 
+            top: 10%; 
+            right: -200px; 
+            animation-duration: 10s; 
+            animation: followPath var(--tur-sresi) linear infinite;
+            offset-path: ellipse(48vw 48vh at center);
+            opacity: 0.15;
+            animation-delay: calc(var(--tur-sresi) * -1 / 8); 
+        }
+
+        .orb-8 { 
+            width: 200px; 
+            height: 200px; 
+            background: var(--neon-cyan1); 
+            top: 10%; 
+            right: -200px; 
+            animation-duration: 10s; 
+            animation: followPath var(--tur-sresi) linear infinite;
+            offset-path: ellipse(48vw 48vh at center);
+            opacity: 0.25;
+            animation-delay: calc(var(--tur-sresi) * -2 / 8); 
+        }
+
+        .orb-9 { 
+            width: 200px; 
+            height: 200px; 
+            background: var(--neon-cyan1); 
+            top: 10%; 
+            right: -200px; 
+            animation-duration: 10s; 
+            animation: followPath var(--tur-sresi) linear infinite;
+            offset-path: ellipse(48vw 48vh at center);
+            opacity: 0.15;
+            animation-delay: calc(var(--tur-sresi) * -3 / 8); 
+        }
+
+        .orb-10 { 
+            width: 200px; 
+            height: 200px; 
+            background: var(--neon-cyan1); 
+            top: 10%; 
+            right: -200px; 
+            animation-duration: 10s; 
+            animation: followPath var(--tur-sresi) linear infinite;
+            offset-path: ellipse(48vw 48vh at center);
+            opacity: 0.25;
+            animation-delay: calc(var(--tur-sresi) * -4 / 8); 
+        }
+
+        .orb-11 { 
+            width: 200px; 
+            height: 200px; 
+            background: var(--neon-cyan1); 
+            top: 10%; 
+            right: -200px; 
+            animation-duration: 10s; 
+            animation: followPath var(--tur-sresi) linear infinite;
+            offset-path: ellipse(48vw 48vh at center);
+            opacity: 0.25;
+            animation-delay: calc(var(--tur-sresi) * -5 / 8); 
+        }
+
+        .orb-12 { 
+            width: 200px; 
+            height: 200px; 
+            background: var(--neon-cyan1); 
+            top: 10%; 
+            right: -200px; 
+            animation-duration: 10s; 
+            animation: followPath var(--tur-sresi) linear infinite;
+            offset-path: ellipse(48vw 48vh at center);
+            opacity: 0.15;
+            animation-delay: calc(var(--tur-sresi) * -6 / 8); 
+        }
+
+        .orb-13 { 
+            width: 200px; 
+            height: 200px; 
+            background: var(--neon-cyan1); 
+            top: 10%; 
+            right: -200px; 
+            animation-duration: 10s; 
+            animation: followPath var(--tur-sresi) linear infinite;
+            offset-path: ellipse(48vw 48vh at center);
+            opacity: 0.25;
+            animation-delay: calc(var(--tur-sresi) * -7 / 8); 
+        }
+
+        */
+
+
+        @keyframes floatOrb {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(80px, 120px); }
+        }
+
+        /* Alttan Üste Çıkan Top Hareketi*/
+        @keyframes floatUp {
+            0% {
+                transform: translate(0,0);
+            }
+
+            100% {
+                transform: translate(-120px,-120px);
+            }
+        }
+
+        @keyframes followPath {
+            from { offset-distance: 0%; }
+            to { offset-distance: 100%; }
+        }
+
+        
+
+        /* --- NAVBAR (GÜNCELLENDİ) --- */
+        .navbar {
+            background: rgba(5, 5, 5, 0.7);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            padding: 15px 0;
+            transition: 0.3s;
+        }
+
+        .navbar-brand { 
+            font-family: 'Orbitron', sans-serif; 
+            font-weight: 900; 
+            font-size: 1.8rem; 
+            letter-spacing: 2px; 
+            color: #fff !important; 
+            text-shadow: 0 0 10px rgba(0, 243, 255, 0.5);
+        }
+
+        /* YENİ NESİL BUTONLAR */
+        .nav-link { 
+            color: rgba(255,255,255,0.9) !important; 
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 600;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            padding: 8px 20px !important;
+            margin: 0 5px;
+            border: 1px solid rgba(255,255,255,0.1); /* İnce çerçeve */
+            border-radius: 4px; /* Keskin köşeler */
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            z-index: 1;
+        }
+
+        /* Hover Animasyonu (Soldan Sağa Dolma) */
+        .nav-link::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 0%; height: 100%;
+            background: var(--neon-cyan);
+            z-index: -1;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .nav-link:hover {
+            color: #000 !important; /* Yazı siyah oluyor */
+            border-color: var(--neon-cyan); /* Çerçeve parlıyor */
+            box-shadow: 0 0 15px rgba(0, 243, 255, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .nav-link:hover::before {
+            width: 100%; /* Arkaplan doluyor */
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            padding-top: 80px;
+        }
+        .hero-subtitle { 
+            font-size: 1.1rem; 
+            color: var(--neon-cyan); 
+            margin-bottom: 1rem; 
+            display: inline-block; 
+            font-weight: 600; 
+            letter-spacing: 2px; 
+        }
+        .hero-title { 
+            font-size: 3.5rem; 
+            font-weight: 700; 
+            line-height: 1.1; 
+            margin-bottom: 1.5rem; 
+        }
+        .gradient-text { 
+            background: linear-gradient(90deg, #fff, var(--neon-cyan)); 
+            -webkit-background-clip: text; 
+            -webkit-text-fill-color: transparent; 
+        }
+        .hero-description { 
+            font-size: 1.1rem; 
+            color: var(--text-bright); 
+            max-width: 550px; 
+            line-height: 1.7; 
+            margin-bottom: 2rem; 
+            text-shadow: 0 1px 2px rgba(0,0,0,0.8); 
+        }
+
+        /* Terminal Window */
+        .code-window {
+            background: rgba(20, 20, 25, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 20px;
+            backdrop-filter: blur(15px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+            transform: perspective(1000px) rotateY(-10deg) rotateX(5deg);
+            transition: 0.5s;
+        }
+        .code-window:hover { 
+            transform: perspective(1000px) rotateY(0deg) rotateX(0deg); 
+            border-color: var(--neon-cyan); 
+        }
+        .window-header { 
+            display: flex; 
+            gap: 8px; 
+            margin-bottom: 15px; 
+        }
+        .dot { 
+            width: 12px; 
+            height: 12px; 
+            border-radius: 50%; 
+        }
+        .dot-red { 
+            background: #ff5f56; 
+        }
+        .dot-yellow { 
+            background: #ffbd2e; 
+        }
+        .dot-green { 
+            background: #27c93f; 
+        }
+        .code-content { 
+            font-family: 'Courier New', Courier, monospace; 
+            font-size: 0.9rem; line-height: 1.6; 
+        }
+        .code-key { 
+            color: var(--neon-purple); 
+        }
+        .code-str { 
+            color: var(--neon-green); 
+        }
+        .code-cmd { 
+            color: var(--neon-cyan); 
+        }
+
+        /* --- SECTION HEADER --- */
+        .section-header {
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+        .neon-orange-text {
+            color: var(--neon-orange);
+            text-shadow: 0 0 15px rgba(255, 145, 0, 0.4);
+        }
+
+        /* --- 3D TILT CARDS --- */
+        .tilt-card {
+            background: rgba(15, 15, 20, 0.7);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 16px;
+            padding: 2rem;
+            height: 100%;
+            transform-style: preserve-3d;
+            transform: perspective(1000px) rotateX(0deg) rotateY(0deg);
+            transition: transform 0.4s ease, border-color 0.3s, box-shadow 0.3s;
+            backdrop-filter: blur(10px);
+        }
+        .tilt-card:hover {
+            transform: perspective(1000px) rotateX(5deg) rotateY(-5deg) scale(1.02);
+            border-color: var(--neon-cyan);
+            box-shadow: -10px 10px 30px rgba(0, 243, 255, 0.15);
+            z-index: 10;
+        }
+        .tilt-card h3 { font-size: 1.25rem; font-weight: 600; margin-bottom: 10px; color: #fff; }
+        .tilt-card p { color: var(--text-bright); font-size: 0.95rem; line-height: 1.6; }
+        .icon-box { font-size: 2rem; margin-bottom: 1.2rem; background: linear-gradient(135deg, var(--neon-cyan), var(--neon-purple)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+
+        /* --- FEATURED PROJECT CARDS --- */
+        .project-card {
+            background: rgba(10, 10, 20, 0.8);
+            border: 2px solid transparent; 
+            border-radius: 20px;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+            transition: 0.3s;
+            margin-bottom: 2rem;
+        }
+        .project-card:hover { transform: translateY(-5px); }
+        .card-social { border-color: var(--social-blue); box-shadow: 0 0 15px rgba(59, 130, 246, 0.15); }
+        .card-social:hover { box-shadow: 0 0 30px rgba(59, 130, 246, 0.4); }
+        .badge-social { background: rgba(59, 130, 246, 0.15); color: #60a5fa; border: 1px solid #3b82f6; }
+        .card-ai { border-color: var(--ai-red); box-shadow: 0 0 15px rgba(255, 71, 87, 0.15); }
+        .card-ai:hover { box-shadow: 0 0 30px rgba(255, 71, 87, 0.4); }
+        .badge-ai { background: rgba(255, 71, 87, 0.15); color: #ff6b81; border: 1px solid #ff4757; }
+        .project-badge { padding: 5px 12px; border-radius: 50px; font-size: 0.75rem; font-weight: bold; }
+
+        /* --- TIMELINE --- */
+        .timeline-advanced { position: relative; padding-left: 20px; }
+        .timeline-advanced::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 2px; background: linear-gradient(to bottom, var(--neon-green), transparent); }
+        .timeline-step { position: relative; margin-bottom: 30px; padding-left: 25px; }
+        .timeline-step::before {
+            content: ''; position: absolute; left: -24px; top: 0;
+            width: 10px; height: 10px; background: var(--bg-color);
+            border: 2px solid var(--neon-green); border-radius: 50%;
+            box-shadow: 0 0 10px var(--neon-green); z-index: 2;
+        }
+        .step-content {
+            background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255,255,255,0.05);
+            padding: 15px; border-radius: 12px; transition: 0.3s;
+        }
+        .step-content:hover { background: rgba(255, 255, 255, 0.08); border-color: var(--neon-green); transform: translateX(5px); }
+        .step-header { display: flex; align-items: center; gap: 10px; margin-bottom: 5px; }
+        .step-icon { color: var(--neon-green); font-size: 1.1rem; }
+        .step-title { color: #fff; font-weight: bold; font-size: 1rem; margin: 0; }
+        .step-desc { color: #ccc; font-size: 0.9rem; margin: 0; line-height: 1.4; }
+
+        /* --- BUTTONS --- */
+        .btn-cyber {
+            padding: 12px 30px;
+            background: rgba(0, 243, 255, 0.1); color: var(--neon-cyan);
+            border: 1px solid var(--neon-cyan);
+            font-weight: 600; letter-spacing: 1px; transition: 0.3s;
+            text-transform: uppercase; font-size: 0.9rem;
+        }
+        .btn-cyber:hover { background: var(--neon-cyan); color: #000; box-shadow: 0 0 20px var(--neon-cyan); }
+        .btn-cyber-orange {
+            padding: 12px 30px;
+            background: rgba(255, 145, 0, 0.1); color: var(--neon-orange);
+            border: 1px solid var(--neon-orange);
+            font-weight: 600; letter-spacing: 1px; transition: 0.3s;
+            text-transform: uppercase; font-size: 0.9rem;
+        }
+        .btn-cyber-orange:hover { background: var(--neon-orange); color: #000; box-shadow: 0 0 20px var(--neon-orange); }
+    </style>
+</head>
+<body>
+
+    <div class="plasma-bg">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+        <div class="orb orb-4"></div>
+        <div class="orb orb-5"></div>
+        <!--
+        <div class="orb orb-6"></div>
+        <div class="orb orb-7"></div>
+        <div class="orb orb-8"></div>
+        <div class="orb orb-9"></div>
+        <div class="orb orb-10"></div>
+        <div class="orb orb-11"></div>
+        <div class="orb orb-12"></div>
+        <div class="orb orb-13"></div>
+        -->
+    </div>
+
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">MEG<span style="color:var(--neon-cyan)">.</span></a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon" style="filter: invert(1);"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="#home"><i class="fa-solid fa-house-chimney"></i> Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about"><i class="fa-regular fa-address-card"></i> About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#skills"><i class="fa-solid fa-spinner"></i> Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects"><i class="fa-solid fa-mug-hot"></i> Support</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <span class="hero-subtitle">> SYSTEM STATUS: ONLINE</span>
+                    <h1 class="hero-title">
+                        Merhaba, ben <br>
+                        <span class="gradient-text">Muhammet Emin.</span>
+                    </h1>
+                    
+                    <p class="hero-description">
+                        Yazılım Mühendisliği öğrencisi olarak, <strong>Java Spring Boot</strong> mimarisi üzerine kurulu güvenli ve ölçeklenebilir sistemler geliştiriyorum.
+                        <br><br>
+                        "Full Cycle" vizyonuyla; fikirden kodlamaya, güvenlik testlerinden (SecOps) sunucu yönetimine kadar projenin her aşamasında aktif rol alıyorum.
+                    </p>
+
+                    <div class="d-flex gap-3">
+                        <a href="#contact" class="btn btn-cyber">İletişime Geç</a>
+                        <a href="#" class="btn btn-cyber-orange"><i class="fab fa-github"></i> GitHub</a>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 mt-5 mt-lg-0">
+                    <div class="code-window">
+                        <div class="window-header">
+                            <div class="dot dot-red"></div>
+                            <div class="dot dot-yellow"></div>
+                            <div class="dot dot-green"></div>
+                            <span style="font-size:0.8rem; margin-left:auto; color:#666">user_profile.js</span>
+                        </div>
+                        <div class="code-content">
+                            <div><span class="code-key">const</span> <span class="code-cmd">engineer</span> = {</div>
+                            <div style="padding-left: 20px;">name: <span class="code-str">"Muhammet Emin Genç"</span>,</div>
+                            <div style="padding-left: 20px;">role: <span class="code-str">"Full Cycle Architect"</span>,</div>
+                            <div style="padding-left: 20px;">skills: [</div>
+                            <div style="padding-left: 40px;"><span class="code-str">"Spring Boot"</span>, <span class="code-str">"React"</span>,</div>
+                            <div style="padding-left: 40px;"><span class="code-str">"Cyber Security"</span>, <span class="code-str">"AI/IoT"</span></div>
+                            <div style="padding-left: 20px;">],</div>
+                            <div style="padding-left: 20px;">status: <span class="code-cmd">"Building Future..."</span></div>
+                            <div>};</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="py-5">
+        <div class="container">
+            <h2 class="section-header">
+                TEKNİK <span class="neon-orange-text">YETKİNLİKLER</span>
+            </h2>
+
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="tilt-card">
+                        <div class="icon-box"><i class="fas fa-layer-group"></i></div>
+                        <h3>Backend & Architecture</h3>
+                        <p>Java ve Spring Boot ekosisteminde (Security, Data, Cloud) mikroservis mimarileri tasarlıyorum. Clean Code ve SOLID prensipleri vazgeçilmezimdir.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="tilt-card">
+                        <div class="icon-box"><i class="fas fa-user-shield"></i></div>
+                        <h3>Cyber Security (SecOps)</h3>
+                        <p>Siber Vatan tecrübemle, yazdığım kodun sadece çalışmasını değil, güvenli olmasını sağlıyorum. Penetration testleri ve ağ güvenliği analizleri yapıyorum.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="tilt-card">
+                        <div class="icon-box"><i class="fas fa-brain"></i></div>
+                        <h3>AI & Future Tech</h3>
+                        <p>Yapay Zeka (LLM) ve IoT teknolojilerini entegre ederek, kişisel asistanlar ve akıllı ev sistemleri üzerine Ar-Ge projeleri geliştiriyorum.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 mb-5">
+                    <h3 class="mb-4" style="font-family:'Orbitron', sans-serif;">GELİŞTİRME <span style="color: var(--neon-green)">SÜRECİM</span></h3>
+                    <div class="timeline-advanced">
+                        <div class="timeline-step">
+                            <div class="step-content">
+                                <div class="step-header"><i class="fas fa-search step-icon"></i><h5 class="step-title">Analiz & Mimari</h5></div>
+                                <p class="step-desc">İhtiyaç analizi, Veritabanı modelleme ve Spring Boot ile sistem mimarisinin kurgulanması.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-step">
+                            <div class="step-content">
+                                <div class="step-header"><i class="fas fa-code step-icon"></i><h5 class="step-title">Geliştirme (Dev)</h5></div>
+                                <p class="step-desc">Java (Spring Boot) ile Backend, React.js ile modern Frontend kodlaması.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-step">
+                            <div class="step-content">
+                                <div class="step-header"><i class="fas fa-shield-alt step-icon"></i><h5 class="step-title">Güvenlik (Sec)</h5></div>
+                                <p class="step-desc">Kod analizi, zafiyet taraması, token yönetimi ve sızma testleri.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-step">
+                            <div class="step-content">
+                                <div class="step-header"><i class="fas fa-rocket step-icon"></i><h5 class="step-title">Dağıtım (Deploy)</h5></div>
+                                <p class="step-desc">Dockerizasyon, Sunucu kurulumu ve CI/CD süreçleri ile canlıya alma.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-7">
+                    <div class="project-card card-social">
+                        <div class="d-flex justify-content-between align-items-center mb-4">
+                            <div>
+                                <h5 class="text-uppercase" style="color: #60a5fa; letter-spacing: 2px; font-size: 0.9rem;">Featured Project</h5>
+                                <h2 class="text-white fw-bold display-6">SocialTeam</h2>
+                            </div>
+                            <div style="background: rgba(59, 130, 246, 0.1); padding: 15px; border-radius: 50%;">
+                                <i class="fas fa-users fa-2x" style="color: #60a5fa"></i>
+                            </div>
+                        </div>
+                        <p class="text-white lead" style="font-size: 1rem;">Gençler için geliştirilen, yüksek performanslı yeni nesil <strong>sosyal medya platformu.</strong> Arkadaş gruplarının ortak etkinlikler düzenleyebileceği güvenli altyapı.</p>
+                        <div class="d-flex flex-wrap gap-2 mt-4">
+                            <span class="project-badge badge-social">Java 21</span>
+                            <span class="project-badge badge-social">Spring Boot 3</span>
+                            <span class="project-badge badge-social">React.js</span>
+                            <span class="project-badge badge-social">Microservices</span>
+                        </div>
+                    </div>
+
+                    <div class="project-card card-ai">
+                        <div class="d-flex justify-content-between align-items-center mb-4">
+                            <div>
+                                <h5 class="text-uppercase" style="color: #ff6b81; letter-spacing: 2px; font-size: 0.9rem;">R&D Project</h5>
+                                <h2 class="text-white fw-bold display-6">AI Assistant</h2>
+                            </div>
+                            <div style="background: rgba(255, 71, 87, 0.1); padding: 15px; border-radius: 50%;">
+                                <i class="fas fa-microchip fa-2x" style="color: #ff6b81"></i>
+                            </div>
+                        </div>
+                        <p class="text-white lead" style="font-size: 1rem;">Lokal ağda çalışan, gizlilik odaklı <strong>Yapay Zeka Asistanı.</strong> Sesli komutlarla IoT cihazlarını yönetir, evi analiz eder ve verileri dışarı sızdırmaz.</p>
+                        <div class="d-flex flex-wrap gap-2 mt-4">
+                            <span class="project-badge badge-ai">Python</span>
+                            <span class="project-badge badge-ai">Local LLM</span>
+                            <span class="project-badge badge-ai">IoT / MQTT</span>
+                            <span class="project-badge badge-ai">Voice Rec.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="text-center py-4 mt-5" style="border-top: 1px solid rgba(255,255,255,0.05);">
+        <p class="mb-0 text-muted small">© 2025 MEG | Engineered with <span style="color: var(--neon-cyan)">Java</span> & <span style="color: var(--neon-purple)">Passion</span></p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

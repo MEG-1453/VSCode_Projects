@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head> <!-- burası sitenin özelliklerinin girildiği yer-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="HTML Derslerii">
+    <meta name="description" content="HTML Derslerii öğreniyoruz bu derslerimizde">
+    <title>HTML'e Giriş</title>
+    <link rel="icon" href="resimler/resim.png" type="image/png">
+
+    <!-- . class # id -->
+     <style>
+        .divOzellikleri{
+            width: 100%;
+            height: 150px;                                      
+            background-color: antiquewhite;
+            text-align: center;
+            padding: 1px;
+            margin-top: 10px;
+            margin-left: 10px;
+            margin-bottom: 10px;
+        }
+    </style>
+
+    <style>
+        .formDiv{
+            width: 400px;
+            background-color: blanchedalmond;
+            height: 550px;
+        }
+    </style>
+
+    <style>
+        /* * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        } */
+
+        body {
+            padding: 25px;
+            background-color: beige;
+            margin: 0px;
+        }
+    </style>
+
+</head>
+
+<body> <!--burası menü başlangıcı-->
+
+    <!--Burası Yorum satırı-->
+    <h1>MEG-1453</h1> <!-- bu bir başlıktır ve h6 ya kadar yolu vardır (h1 en büyük başlıktır)-->
+
+    <!--
+
+    Visual Studio Code kısa yolları
+    
+    1-ALT + SHIFT + F = Kodları düzenlemek 
+
+    2- CTRL + ALT + asagı veya yukarı ok = imleci yukarı veya asagı büyütüyor. 
+
+    3- ALT + yukarı asagı ok tusarı = satırı kaydırmak icin 
+
+    4- Yazıyı secip CTRL+D aynı diger yazıları'da seciyor daha sonra degistirme veya ekleme yapabilir 
+    
+    5- CTRL+SHIFT+K = Satır Silmek 
+
+    6-CTRL+ENTER = Yeni satır
+    
+    -->
+
+    <ul> <!-- bu bir liste komutudur ve kısa yolu    ul>li*5     dir-->
+        <li class="item">MEG-1453</li>
+        <li class="item">Muhammed</li>
+        <li class="item">Emin</li>
+        <li class="item">Genç</li>
+        <li class="item">Never Give Up</li>
+    </ul>
+
+    <p>lorem10</p>  <!-- bu paragraf kısmı ve o satırı komple doldurur soonraki bi alt satıra yazdırılır-->
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium quam in quibusdam fuga rerum debitis facere dolor quia ullam quas numquam, deleniti aut adipisci voluptate impedit neque. Enim nulla modi porro nam omnis, excepturi maxime reprehenderit. At ipsam vel quidem, non quasi excepturi magni, vitae ipsa numquam voluptas iure reiciendis.</p>
+
+    <!-- 
+    
+    biçimlendirme etiketleri:
+
+    1- hr
+
+    2- br
+
+    3- strong ; yazıyı kalınlaştırır sadece strong da kullanabilirsin illa p içine yazmana gerek yok
+
+    4- b ; yazıyı bu da kalınlaştırır strongdan farkı yok
+
+    5- i ; italic
+
+    6- mark ; üzeine fosfor sarı ile işaretliyor
+    
+    -->    
+
+    <h2>
+        <strong>
+            <i>
+                HTML dersleri       <!--bu şekilde de kullanabilirsin okunurluk açısından-->
+            </i>
+        </strong>
+    </h2>
+
+    <!-- saten biz bu yazı üzerinde oyanamaları css üzerinden yapacağız-->
+
+    <hr> <!--ya da <hr/>   bu alta bir çizgi çekmemize yarar-->
+
+    <p><strong>java dersleri</strong></p>
+    <br/> <!-- ya da <br>  bu bir satır daha boşluk bıraktırır -->
+
+    <p>html öğreniyorum</p>
+    <br/> <!-- ya da <br>  bu bir satır daha boşluk bıraktırır -->
+
+    <p>deneme yanılma yapıyorum</p>
+
+    <hr/>
+    <br/>
+    <br>
+    <br/>
+
+    <center>
+
+        <img src="/resimler/Turk-Bayragi.jpg" 
+        alt="Resim Bulunamadı" />
+
+        <br/>
+        <br/>
+        <br/>
+
+        <h2>
+        <b>
+            <i>
+                İSTİKLAL MARŞI
+            </i>
+        </b>
+    </h2>
+    </center>
+    
+    <br/>
+    <br/>
+    <br/>
+
+
+
+    <table border="1" width="80%" align="center">
+
+        <tr>
+            <td width="50%" valign="top" align="center">   <!-- th kullansaydım td yerine başlık olarak algılayıp 
+                <i>                                                 kalınlaştıracaktı yazıyı-->
+                    <p>Korkma! Sönmez bu şafaklarda yüzen al sancak,</p>
+                    <p>Sönmeden yurdumun üstünde tüten en son ocak.</p>
+                    <p>O benim milletimin yıldızıdır, parlayacak;</p>
+                    <p>O benimdir, o benim milletimindir ancak.</p>
+                    <br>
+                    <br>
+                    <br>
+                    <p>Çatma, kurban olayım, çehreni ey nazlı hilal!</p>
+                    <p>Kahraman ırkıma bir gül; ne bu şiddet, bu celal?</p>
+                    <p>Sana olmaz dökülen kanlarımız sonra helal…</p>
+                    <p>Hakkıdır, Hakk’a tapan milletimin istiklal.</p>
+                    <br>
+                    <br>
+                    <br>
+                    <p>Ben ezelden beridir hür yaşadım, hür yaşarım,</p>
+                    <p>Hangi çılgın bana zincir vuracakmış? Şaşarım.</p>
+                    <p>Kükremiş sel gibiyim, bendimi çiğner, aşarım,</p>
+                    <p>Yırtarım dağları, enginlere sığmam, taşarım.</p>
+                    <br>
+                    <br>
+                    <br>
+                    <p>Garbın afakını sarmışsa çelik zırhlı duvar,</p>
+                    <p>Benim iman dolu göğsüm gibi serhaddim var.</p>
+                    <p>Ulusun, korkma! Nasıl böyle bir imanı boğar,</p>
+                    <p>“Medeniyet” dediğin tek dişi kalmış canavar?</p>
+                    <br>
+                    <br>
+                    <br>
+                    <p>Arkadaş! Yurduma alçakları uğratma sakın,</p>
+                    <p>Siper et gövdeni, dursun bu hayâsızca akın.</p>
+                    <p>Doğacaktır sana vadettiği günler Hakk’ın,</p>
+                    <p>Kim bilir, belki yarın belki yarından da yakın.</p>
+                    <br>
+                    <br>
+                    <br>
+                </i>
+            </td>
+            
+            <td width="50%" valign="top" align="center">
+                <i>    
+                    <p>Bastığın yerleri “toprak” diyerek geçme, tanı,</p>
+                    <p>Düşün altındaki binlerce kefensiz yatanı.</p>
+                    <p>Sen şehit oğlusun, incitme, yazıktır atanı,</p>
+                    <p>Verme, dünyaları alsan da bu cennet vatanı.</p>
+                    <br>
+                    <br>
+                    <br>
+                    <p>Kim bu cennet vatanın uğruna olmaz ki feda?</p>
+                    <p>Şüheda fışkıracak, toprağı sıksan şüheda.</p>
+                    <p>Canı, cananı, bütün varımı alsın da Hüda,</p>
+                    <p>Etmesin tek vatanımdan beni dünyada cüda.</p>
+                    <br>
+                    <br>
+                    <br>
+                    <p>Ruhumun senden İlahî, şudur ancak emeli:</p>
+                    <p>Değmesin mabedimin göğsüne namahrem eli.</p>
+                    <p>Bu ezanlar, ki şehadetleri dinin temeli,</p>
+                    <p>Ebedî, yurdumun üstünde benim inlemeli.</p>
+                    <br>
+                    <br>
+                    <br>
+                    <p>O zaman vecdile bin secde eder, varsa taşım,</p>
+                    <p>Her cerihamdan, İlahî, boşanıp kanlı yaşım,</p>
+                    <p>Fışkırır ruhumücerret gibi yerden naaşım,</p>
+                    <p>O zaman yükselerek arşa değer belki başım.</p>
+                    <br>
+                    <br>
+                    <br>
+                    <p>Dalgalan sen de şafaklar gibi ey şanlı hilal!</p>
+                    <p>Olsun artık dökülen kanlarımın hepsi helal.</p>
+                    <p>Ebediyen sana yok, ırkıma yok izmihlal.</p>
+                    <p>Hakkıdır, hür yaşamış bayrağımın hürriyet;</p>
+                    <p>Hakkıdır, Hakk’a tapan milletimin istiklal.</p>
+                </i>
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan="2" align="center">
+                <br>
+                <b><i>Mehmet Akif Ersoy</i></b>
+                <br><br>
+            </td>
+        </tr>
+        
+    </table>
+
+
+    <!-- a yazıp enter basınca link girme yeri açılıyor ve birde https protokolünü yazmak zorundayız
+     ==>  _blank başka sayfada açıyor linki-->
+    
+    <br>
+    Google'a gitmek için <a href="https://www.google.com" target="_blank">tıklayınız</a>  
+
+    <br><br><br>
+
+    <!-- resmi bir buton haline getirmiş olduk-->
+    <center>
+    <p>Aşağıdaki butona tıklayarak youtube'a gidebilirsiniz :</p>
+    <a href="https://www.youtube.com/" target="_blank">
+        <img src="/resimler/youtube.jpg" alt="Resim Bulunamadı" width="60" height="60" >
+    </a>
+    </center>
+
+    <br><br><br>
+
+    <!-- bu saymadan liste eder unordinary list-->
+
+    <ul>
+        <li>tatlı</li>
+        <li>oralet</li>
+    </ul><br>
+
+    <hr><br>
+
+    <!-- bu sayarak listeler ordinary list-->
+
+    <ol type="I">  <!-- type ile nasıl sıralnabileceğini seçebilirsin-->
+        <li>tatlı</li>
+        <li>oralet</li>
+    </ol>
+
+
+    <!-- alıştırma yapıyorum-->
+
+    <h2>Site Tasarımı için Adımlar</h2>
+    <ol>
+        <i>
+        <li>Genel Yaklaşım
+            <ul>
+                <li>html</li>
+                <li>css</li>
+                <li>javascript</li>
+            </ul>
+        </li>
+
+
+        <li>Kullanım şekli
+            <ol type="I">
+                <li>html
+                    <ul>(sistemin temel yapı taşı)</ul>    
+                </li>
+                <li>head
+                    <ul>(site için gerekli özellikler)</ul>
+                </li>
+                <li>body
+                    <ul>(sistemin iskeleti)</ul>
+                </li>
+            </ol>
+        </li>
+        </i>
+    </ol>
+
+
+    <table border="1" width="25%">
+        <tr>
+            <th colspan="3"><i>Kullanıcı Verileri</i></th>
+        </tr>
+
+        <tr>
+            <th>İsim</th>
+            <th>Soyİsim</th>
+            <th>Yaş</th>
+        </tr>
+
+        <tr>
+            <td>MEG</td>
+            <td>1453</td>
+            <td>23</td>
+        </tr>
+
+        <tr>
+            <td>Muhammed</td>
+            <td>Genç</td>
+            <td>23</td>
+        </tr>
+    </table>
+
+    <!-- rowspan örneği ve bu birleşimleri td de yerine yazıyoruz -->
+
+    <table border="1" width="25%">
+        
+        <tr>
+            <td rowspan="2"><b>İÇECEKLER</b></td>
+            
+            <td>Çay</td> 
+        </tr>
+
+        <tr>
+            <td>Kahve</td>
+        </tr>
+
+    </table>
+
+
+    <!-- bir örnek de benden-->
+
+    <table border="1" width="25%">
+        <tr>
+            <td colspan="3" align="center"><h3><i>Kullanıcı verileri</i></h3></td>
+        </tr>
+
+        <tr align="center">
+            <th rowspan="3" width="50">
+                L<br/>
+                İ<br/>
+                S<br/>
+                T<br/>
+                E<br/>
+            </th>
+            <th width="80">Soyisim</th>
+            <th width="50">Yaş</th>
+        </tr>
+        
+        <tr align="center">
+            <td>1453</td>
+            <td>23</td>
+        </tr>
+
+        <tr align="center">
+            <td>Genç</td>
+            <td>23</td>
+        </tr>
+    </table>
+
+    <!-- span kullanımı sadece bulunduğu yeri kaplar-->
+
+    <span>bu cümle span komutu ile yazılmıştır</span>
+    <span>bu cümlede span komutu ile yazılduı.</span>
+    <span>span sadece bulunduğu konumu kaplar.</span>
+
+    <!-- div etiketi-->
+   
+    <!--
+    <style>
+        .divOzellikleri{
+            width: 80%;
+            height: 75px;                                      bunu head içine yazıyoruz
+            background-color: antiquewhite;
+            text-align: center;
+        }
+    </style>
+    -->
+
+    <div class="divOzellikleri">
+        <h3>Artık süslendirmeye başladık</h3>
+        <p>işte böyle yeğen</p>
+    </div>
+
+    <!--   form kullanımı    
+        <input type="text"> 
+
+        <input type="password"> 
+
+        <input type="email"> 
+
+        <input type="checkbox"> 
+
+        <input type="radio"> 
+
+        <input type="file"> 
+
+        <input type="reset"> 
+
+        <input type="submit"> 
+
+        <textarea id="w3review" name="w3review" rows="4" cols="50"> 
+
+        <select><option> 
+    -->
+
+
+    <form>
+        Adınız :<input type="text" placeholder="İsminiz"/>
+        Password :<input type="password" placeholder="Şifreniz">
+        Mail :<input type="email" placeholder="email adresi"><br><br>
+        Kitap Okumak <input type="checkbox" id="kitapChackbox"><br>
+        Kitap Okumak <input type="checkbox" id="sporChackbox"><br><br>
+        Kadın <input type="radio" name="cinsiyetRadio" checked="true"><br>
+        Erkek <input type="radio" name="cinsiyetRadio" ><br>
+        <input type="file"><br><br>
+        İçecek Seçiniz
+        <select name="secim" id="secimSelect">
+            <option value="Çay">Çay</option>
+            <option value="Kahve">Kahve</option>
+            <option value="limonata">limonata</option>
+            <option value="tatlı">tatlı</option>
+            <option value="salep">salep</option>
+        </select><br><br>
+        <textarea name="mesajInput" id="mesajAlani" cols="70" rows="10"></textarea><br>
+
+        <input type="submit" value="Gönder">
+        <input type="reset" value="Temizle">
+    </form>
+
+    <br>
+    <hr><br>
+
+
+    <!-- bu projede benden-->
+
+    <div class="formDiv">
+    <form>
+        <table border="1">
+            <tr>
+                <td>Adınız:</td>
+                <td><input type="text" placeholder="İsim Giriniz"></td>
+            </tr>
+            <tr>
+                <td>SoyAd:</td>
+                <td><input type="text" placeholder="Soyadınız"></td>
+            </tr>
+            <tr>
+                <td>Email Adres:</td>
+                <td><input type="email" placeholder="Mail Adresiniz"></td>
+            </tr>
+            <tr>
+                <td>Şifre:</td>
+                <td><input type="password" placeholder="Şifre Giriniz"></td>
+            </tr>
+            <tr>
+                <td>Cinsiyet:</td>
+                <td>Kadın: <input type="radio" name="cinsiyetRadio"> Erkek: <input type="radio" name="cinsiyetRadio" checked="true"></td>
+            </tr>
+            <tr>
+                <td>Doğum Tarihi:</td>
+                <td><input type="date"></td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">Hobiler</td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center"><input type="checkbox">Kitap <input type="checkbox">Spor <input type="checkbox">Müzik </td>
+            </tr>
+            <tr>
+                <td colspan="2">Konsantrasyon seviyen:<select name="secim" id="secimSelect">
+                    <option value="lower">Düşük</kbd></option>
+                    <option value="middle">Orta</option>
+                    <option value="higher">Yüksek</option>
+                </select></td>
+            </tr>
+            <tr>
+                <td colspan="2"><input type="file">
+            </tr><br>
+            <tr>
+                <td colspan="2"><textarea name="mesajInput" id="mesajAlani" cols="50" rows="10" placeholder="Mesajınız"></textarea></td>
+            </tr>
+            <tr>
+                <td>Okudum, Onaylıyorum</td>
+                <td><input type="radio" name="onayRadio" checked="true"></td>
+            </tr>
+            <tr> 
+                <td>Okudum, Onaylamıyorum</td>
+                <td><input type="radio" name="onayRadio"></td>
+            </tr>
+            <tr>
+                <td><input type="submit" value="Gönder"></td>
+                <td><input type="reset" value="Temizle"></td>
+            </tr>
+        </table>
+    </form>
+    </div>
+
+    <!--video ekleme-->
+
+    <video width="500" height="300" controls>
+        <source src="/videolar/WIN_20251214_13_08_07_Pro.mp4" type="video/mp4">
+    </video><br>
+    
+
+    <!-- IFrame kullanımı-->
+
+    
+    <iframe src="https://www.yeniakit.com.tr/kart/haber/muhammed-konyevi-kimdir-seyda-muhammed-konyevi-hazretlerinin-hayati-977394.html"
+     width="700" height="900" frameborder="0"></iframe>
+    <br><br>
+    <br>
+    
+
+    <!-- youtubda yerleştir kulalnarak video ekleme-->
+
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/TPvVfZCO4Ys?si=9-ChJyhCIZVnqind" title="YouTube video player"
+    allowfullscreen></iframe>
+
+</body>
+
+</html>

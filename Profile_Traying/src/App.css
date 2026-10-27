@@ -1,0 +1,77 @@
+body {
+  margin: 0;
+  background-color: #111;
+  color: white;
+  overflow-x: hidden;
+  font-family: 'Arial Black', sans-serif;
+}
+
+.main-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+/* Karakter Stili */
+.character {
+  position: absolute;
+  left: 50px;
+  top: 45%;
+  font-size: 80px;
+  z-index: 10;
+}
+
+/* Kanca ve İp */
+.hook {
+  position: absolute;
+  left: 120px;
+  top: 48%;
+  font-size: 50px;
+  z-index: 5;
+}
+
+.rope {
+  position: absolute;
+  left: 100px; /* Karakterin elinden başlasın */
+  top: 50%;
+  height: 5px;
+  background-color: #8B4513; /* İp rengi */
+  transform-origin: left center;
+  z-index: 4;
+}
+
+/* Ana Başlık */
+.main-title {
+  font-size: 8rem;
+  margin: 0;
+  z-index: 3; /* Harflerden önde olmalı */
+  position: relative;
+  text-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  background: linear-gradient(to right, #ff00cc, #333399);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Açıklama Alanı */
+.description-area {
+  margin-top: 20px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  z-index: 2; /* Başlığın arkasında */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 800px;
+  perspective: 1000px; /* 3D hissi verir */
+}
+
+.desc-char {
+  color: #aaa;
+  position: relative;
+  /* Harflere biraz gölge verelim ki 3D gibi dursun */
+  text-shadow: 2px 2px 0px #000;
+}
